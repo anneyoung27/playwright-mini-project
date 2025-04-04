@@ -12,8 +12,11 @@
         <maven.compiler.source>23</maven.compiler.source>
         <maven.compiler.target>23</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <playwright-main>1.51.0</playwright-main>
-        <cucumber-version>7.21.1</cucumber-version>
+        <playwright.main>1.51.0</playwright.main>
+        <cucumber.version>7.21.1</cucumber.version>
+        <cucumber.testng.version>7.21.1</cucumber.testng.version>
+        <testng-version>7.11.0</testng-version>
+        <cucumber.pico.version>7.21.1</cucumber.pico.version>
     </properties>
 
     <dependencies>
@@ -21,21 +24,36 @@
         <dependency>
             <groupId>com.microsoft.playwright</groupId>
             <artifactId>playwright</artifactId>
-            <version>${playwright-main}</version>
+            <version>${playwright.main}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>${cucumber-version}</version>
+            <version>${cucumber.version}</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
-            <version>${cucumber-version}</version>
+            <version>${cucumber.testng.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-picocontainer</artifactId>
+            <version>${cucumber.pico.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng-version}</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
