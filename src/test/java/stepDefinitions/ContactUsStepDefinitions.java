@@ -39,4 +39,9 @@ public class ContactUsStepDefinitions extends DriverFactory {
         String actualSuccessMessage = contactUsPage.verifySuccessSubmitMessage("div[id='contact_reply'] h1");
         Assert.assertEquals(actualSuccessMessage, "Thank You for your Message!");
     }
+
+    @Then("I should be presented error inline message")
+    public void iShouldBePresentedErrorInlineMessage() {
+        Assert.assertTrue(contactUsPage.errorInlineMessage(), "The body text doesn't match the expected error message");
+    }
 }
