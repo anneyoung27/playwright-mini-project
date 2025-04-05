@@ -8,13 +8,14 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.HomePage;
 
+
 public class HomePageStepDefinitions extends DriverFactory {
     private static HomePage homePage;
 
     @Given("I navigate to the webdriveruniversity homepage")
     public void iNavigateToTheWebdriveruniversityHomepage() {
         homePage = new HomePage(page);
-        homePage.navigateTo("https://webdriveruniversity.com");
+        homePage.navigateTo(setUp.getProperty("URL"));
     }
 
     @When("I click on the contact us button")

@@ -17,6 +17,8 @@
         <cucumber.testng.version>7.21.1</cucumber.testng.version>
         <testng-version>7.11.0</testng-version>
         <cucumber.pico.version>7.21.1</cucumber.pico.version>
+        <extent.report.cucumber>1.14.0</extent.report.cucumber>
+        <extent.report.version>5.1.2</extent.report.version>
     </properties>
 
     <dependencies>
@@ -54,6 +56,20 @@
             <artifactId>testng</artifactId>
             <version>${testng-version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/tech.grasshopper/extentreports-cucumber7-adapter -->
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>${extent.report.cucumber}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>${extent.report.version}</version>
         </dependency>
 
     </dependencies>

@@ -36,7 +36,7 @@ public class ContactUsStepDefinitions extends DriverFactory {
 
     @Then("I should be presented with a successful contact us submission message")
     public void iShouldBePresentedWithASuccessfulContactUsSubmissionMessage() {
-        String actualSuccessMessage = contactUsPage.verifySuccessSubmitMessage("div[id='contact_reply'] h1");
+        String actualSuccessMessage = contactUsPage.verifySuccessSubmitMessage("//h1[normalize-space()='Thank You for your Message!']");
         Assert.assertEquals(actualSuccessMessage, "Thank You for your Message!");
     }
 

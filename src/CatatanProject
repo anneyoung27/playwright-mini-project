@@ -1,0 +1,7 @@
+- POM
+- Json report
+- Html report
+- Extent report
+- Factory for driver manager
+- Config to manage properties
+- Helper class

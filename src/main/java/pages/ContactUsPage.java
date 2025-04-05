@@ -3,6 +3,7 @@ package pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import factory.DriverFactory;
+import com.microsoft.playwright.options.WaitForSelectorState;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,20 +31,22 @@ public class ContactUsPage extends DriverFactory {
     }
 
     public void clickSubmitButton(){
-        Page.WaitForSelectorOptions options = new Page.WaitForSelectorOptions().setTimeout(1000);
+        Page.WaitForSelectorOptions options = new Page.WaitForSelectorOptions().setTimeout(Integer.parseInt(setUp.getProperty("EXPLICIT_WAIT")));
         page.waitForSelector("input[value='SUBMIT']", options);
 
         page.click("input[value='SUBMIT']");
     }
 
-    public String verifySuccessSubmitMessage(String actualElement){
-        page.waitForSelector(actualElement, new Page.WaitForSelectorOptions().setTimeout(1000));
-
+    public String verifySuccessSubmitMessage(String actualElement) {
         Locator locator = page.locator(actualElement);
-        locator.isVisible();
 
-        return page.textContent(actualElement);
+        // Wait for the element to be visible before interacting
+        locator.waitFor(new Locator.WaitForOptions().setState(WaitForSelectorState.VISIBLE)
+                .setTimeout(Integer.parseInt(setUp.getProperty("EXPLICIT_WAIT"))));
+
+        return locator.textContent();
     }
+
 
     public boolean errorInlineMessage(){
         page.waitForSelector("body");

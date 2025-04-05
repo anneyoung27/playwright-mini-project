@@ -7,8 +7,8 @@ import factory.DriverFactory;
 public class LoginPage extends DriverFactory {
     private String alertText;
 
-    public LoginPage(Page contactUs){
-        page = contactUs;
+    public LoginPage(Page loginPage){
+        page = loginPage;
     }
 
     public void typeUsername(String value){
